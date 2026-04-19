@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta_title">Ashley — AI Desktop Companion</title>
+  <meta name="description" data-i18n="meta_description" content="Ashley is an AI desktop companion with personality. She talks, sees your screen, and acts on your PC. One-time purchase, lifetime use.">
+  <meta property="og:title" content="Ashley — AI Desktop Companion">
+  <meta property="og:description" content="An AI desktop companion with personality. She talks, sees your screen, and acts on your PC.">
+  <meta property="og:image" content="assets/ashley-portrait.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Language switcher -->
+  <div class="lang-switch">
+    <button data-lang="en" class="lang-btn" aria-label="English">EN</button>
+    <button data-lang="es" class="lang-btn" aria-label="Español">ES</button>
+    <button data-lang="fr" class="lang-btn" aria-label="Français">FR</button>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="stars"></div>
+    <div class="hero-content">
+      <img src="assets/ashley-portrait.jpg" alt="Ashley portrait" class="hero-portrait">
+      <h1 class="hero-title" data-i18n="hero_title">Meet Ashley</h1>
+      <p class="hero-subtitle" data-i18n="hero_subtitle">Your AI desktop companion with personality.</p>
+      <p class="hero-tagline" data-i18n="hero_tagline">She talks. She sees your screen. She acts on your PC.</p>
+      <a href="https://ashley-ia.lemonsqueezy.com/checkout/buy/618b7e13-511b-435c-8e7f-d14cedadfd02" class="btn-primary" target="_blank" rel="noopener">
+        <span data-i18n="hero_cta">Get Ashley — €19.99</span>
+      </a>
+      <p class="hero-footnote" data-i18n="hero_footnote">One-time purchase · Lifetime use · No subscriptions</p>
+    </div>
+  </section>
+
+  <!-- Video demo -->
+  <section class="section video-section">
+    <h2 class="section-title" data-i18n="video_title">See her in action</h2>
+    <p class="section-sub" data-i18n="video_sub">A quick look at what Ashley can do.</p>
+    <div class="video-wrap">
+      <!-- Replace src with real YouTube embed when video is ready.
+           Example: https://www.youtube.com/embed/VIDEO_ID -->
+      <div class="video-placeholder">
+        <div class="video-placeholder-inner">
+          <div class="play-icon">▶</div>
+          <p data-i18n="video_placeholder">Demo video coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section features-section">
+    <h2 class="section-title" data-i18n="features_title">What she does</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <h3 class="feature-title" data-i18n="feat1_title">Real conversation</h3>
+        <p class="feature-desc" data-i18n="feat1_desc">Powered by Grok. She remembers you, your projects, your habits. Never starts from zero.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎤</div>
+        <h3 class="feature-title" data-i18n="feat2_title">Voice in and out</h3>
+        <p class="feature-desc" data-i18n="feat2_desc">Dictate by microphone (offline Whisper) or let her speak with premium ElevenLabs voices.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👁️</div>
+        <h3 class="feature-title" data-i18n="feat3_title">She sees your screen</h3>
+        <p class="feature-desc" data-i18n="feat3_desc">Enable vision and Ashley sees what you see. She reacts, comments, and helps in context.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3 class="feature-title" data-i18n="feat4_title">She acts on your PC</h3>
+        <p class="feature-desc" data-i18n="feat4_desc">Open apps, close tabs, control volume, type text, run shortcuts. Your hands-free assistant.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Ashley -->
+  <section class="section why-section">
+    <h2 class="section-title" data-i18n="why_title">Why Ashley</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">💎</div>
+        <h3 class="why-sub-title" data-i18n="why1_title">One-time purchase</h3>
+        <p class="why-desc" data-i18n="why1_desc">€19.99, lifetime use. No subscriptions, no renewals, no BS.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔑</div>
+        <h3 class="why-sub-title" data-i18n="why2_title">Bring your own key</h3>
+        <p class="why-desc" data-i18n="why2_desc">Use your own Grok API key. You pay xAI directly — no middleman markup.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔒</div>
+        <h3 class="why-sub-title" data-i18n="why3_title">Your data stays local</h3>
+        <p class="why-desc" data-i18n="why3_desc">Chat, memories, facts — all stored on your PC. Never sent to third parties.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section pricing-section" id="pricing">
+    <h2 class="section-title" data-i18n="pricing_title">Get Ashley</h2>
+    <div class="price-card">
+      <div class="price-header">
+        <img src="assets/ashley-soft.jpg" alt="" class="price-avatar">
+        <div>
+          <h3 class="price-name" data-i18n="pricing_product">Ashley — AI Desktop Companion</h3>
+          <p class="price-amount">€19.99</p>
+          <p class="price-note" data-i18n="pricing_note">One-time · Lifetime · 3 PCs</p>
+        </div>
+      </div>
+      <ul class="price-features">
+        <li data-i18n="price_feat1">✓ Unlimited conversations</li>
+        <li data-i18n="price_feat2">✓ Voice input &amp; output</li>
+        <li data-i18n="price_feat3">✓ Screen vision</li>
+        <li data-i18n="price_feat4">✓ System actions (apps, volume, etc.)</li>
+        <li data-i18n="price_feat5">✓ Long-term memory of you</li>
+        <li data-i18n="price_feat6">✓ Achievements &amp; affection system</li>
+        <li data-i18n="price_feat7">✓ Install on up to 3 PCs</li>
+        <li data-i18n="price_feat8">✓ Free updates forever</li>
+      </ul>
+      <a href="https://ashley-ia.lemonsqueezy.com/checkout/buy/618b7e13-511b-435c-8e7f-d14cedadfd02" class="btn-primary btn-full" target="_blank" rel="noopener">
+        <span data-i18n="pricing_cta">Buy Ashley — €19.99</span>
+      </a>
+      <p class="price-secure" data-i18n="pricing_secure">🔒 Secure checkout powered by Lemon Squeezy</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-section">
+    <h2 class="section-title" data-i18n="faq_title">Frequently asked</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary data-i18n="faq1_q">What exactly is Ashley?</summary>
+        <p data-i18n="faq1_a">Ashley is a Windows desktop app with a character-driven AI inside. She has her own personality, remembers you long-term, and can control your PC (open apps, search the web, adjust volume, etc.). Think of her as a personal assistant with more character than Alexa and more capability than ChatGPT on your desktop.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq2_q">Do I need a Grok account?</summary>
+        <p data-i18n="faq2_a">Yes. Ashley runs on xAI's Grok model. You need a free xAI account and an API key (paid per use — typically €1-3/month for regular use). This setup means you never pay us a subscription; you pay xAI only for what you use, and Ashley is yours forever after one payment.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq3_q">Which operating systems are supported?</summary>
+        <p data-i18n="faq3_a">Windows 10 and 11 are fully supported. macOS and Linux builds are planned for after launch — if that's critical for you, drop us an email before buying.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq4_q">Can I use her on multiple PCs?</summary>
+        <p data-i18n="faq4_a">Yes. Your license allows activation on up to 3 devices (desktop + laptop + 1 spare for reinstalls). You can deactivate a slot from one PC to free it for another.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq5_q">Refund policy?</summary>
+        <p data-i18n="faq5_a">Email us within 14 days of purchase and we'll refund you, no questions asked. Ashley is an experimental product and not everyone will click with her — we'd rather you be happy.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq6_q">Is my data private?</summary>
+        <p data-i18n="faq6_a">Your chat history, memories, and preferences stay on your PC in an encrypted folder. We never receive any of that. The only data sent out is your messages directly to xAI (Grok), under their privacy policy, using your own API key.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <strong>Ashley</strong>
+        <span data-i18n="footer_tagline">Your AI desktop companion</span>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:ashleyia2c@gmail.com" data-i18n="footer_contact">Contact</a>
+        <a href="https://github.com/ashleyia2c-dot/Ashley-IA" target="_blank" rel="noopener">GitHub</a>
+        <a href="privacy.html" data-i18n="footer_privacy">Privacy</a>
+        <a href="terms.html" data-i18n="footer_terms">Terms</a>
+        <a href="https://ashley-ia.lemonsqueezy.com/checkout/buy/618b7e13-511b-435c-8e7f-d14cedadfd02" target="_blank" rel="noopener" data-i18n="footer_buy">Buy</a>
+      </div>
+      <p class="footer-copy" data-i18n="footer_copy">© 2026 Ashley IA · Made with care by an indie dev</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
