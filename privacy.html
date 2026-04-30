@@ -8,68 +8,94 @@
   <link rel="icon" href="assets/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
+    /* v0.16.14 — variables actualizadas al boutique noir nuevo:
+       --text-dim → --text-mid · --text-primary → --text-bright ·
+       --text-muted → --text-soft. Tipografía Cormorant Garamond para
+       títulos legales (matching el resto del site). */
     .legal-page {
       max-width: 760px;
       margin: 0 auto;
       padding: 80px 24px 120px;
-      color: var(--text-dim);
+      color: var(--text-mid);
       line-height: 1.75;
       font-size: 15px;
+      position: relative;
+      z-index: 1;
     }
     .legal-page h1 {
-      font-size: 32px;
-      font-weight: 300;
-      letter-spacing: 2px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(36px, 5vw, 52px);
+      font-weight: 600;
+      letter-spacing: 0.005em;
       color: var(--accent);
       text-align: center;
       margin-bottom: 8px;
+      text-shadow: 0 2px 24px rgba(232, 202, 158, 0.18);
     }
     .legal-page .updated {
       text-align: center;
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 48px;
+      font-size: 12.5px;
+      color: var(--text-soft);
+      margin-bottom: 52px;
+      font-style: italic;
+      letter-spacing: 0.04em;
     }
     .legal-page h2 {
-      font-size: 20px;
-      color: var(--text-primary);
-      margin-top: 36px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 26px;
+      color: var(--text-bright);
+      margin-top: 40px;
       margin-bottom: 14px;
       font-weight: 600;
+      letter-spacing: 0.005em;
     }
     .legal-page h3 {
-      font-size: 16px;
-      color: var(--text-primary);
-      margin-top: 24px;
+      font-size: 15px;
+      color: var(--text-bright);
+      margin-top: 26px;
       margin-bottom: 10px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
     }
     .legal-page p, .legal-page li {
       margin-bottom: 12px;
     }
     .legal-page ul {
-      margin-left: 20px;
+      margin-left: 22px;
       margin-bottom: 16px;
     }
+    .legal-page strong {
+      color: var(--text-bright);
+      font-weight: 600;
+    }
     .legal-page code {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1px 6px;
-      border-radius: 4px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 13px;
+      background: rgba(232, 202, 158, 0.08);
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-family: 'Consolas', 'SF Mono', monospace;
+      font-size: 12.5px;
       color: var(--accent);
+      border: 1px solid rgba(232, 202, 158, 0.14);
     }
     .legal-page a {
       color: var(--accent);
-      text-decoration: underline;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(232, 202, 158, 0.4);
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .legal-page a:hover {
+      color: var(--text-bright);
+      border-bottom-color: var(--accent);
     }
     .back-link {
       display: inline-block;
       margin-top: 40px;
       font-size: 13px;
-      color: var(--text-muted);
+      color: var(--text-soft);
+      border-bottom: none;
     }
     .back-link:hover {
       color: var(--accent);
@@ -103,21 +129,40 @@
       <li>Your license key and activation instance, used for update verification</li>
     </ul>
     <p>
-      Your xAI API key is stored encrypted using Windows DPAPI in <code>%APPDATA%\Ashley\key.bin</code>, tied to your Windows user account — it cannot be read from another account or another computer.
+      Your AI provider API key (xAI, OpenRouter, or none if you use Ollama) is stored encrypted using Windows DPAPI in <code>%APPDATA%\Ashley\key.bin</code>, tied to your Windows user account — it cannot be read from another account or another computer.
     </p>
     <p>
       <strong>Ashley does not upload any of this data to our servers.</strong> We never receive your conversations, memories, preferences, keys, or license information. These files stay on your device. Deleting the <code>%APPDATA%\Ashley\</code> folder erases every trace of your Ashley-side data.
     </p>
 
     <h2>3. What data goes to third parties</h2>
-    <h3>xAI (Grok)</h3>
     <p>
-      When you send a message to Ashley, the conversation context is sent directly from your computer to xAI's Grok API, using your own API key. xAI processes the message to generate Ashley's response. This data flow is governed by <a href="https://x.ai/legal/privacy-policy" target="_blank" rel="noopener">xAI's own privacy policy</a>. We are not a party to that relationship and do not receive any of that content.
+      Ashley supports multiple AI providers and TTS engines. <strong>You choose which ones to use</strong>, and only the ones you explicitly enable receive your data. If you choose 100% local options (Ollama for AI, Web Speech / Kokoro / VoiceVox local for voice), <strong>nothing leaves your PC</strong>.
     </p>
 
-    <h3>ElevenLabs (optional, premium voice)</h3>
+    <h3>xAI (Grok) — optional, cloud AI provider</h3>
     <p>
-      If you enable ElevenLabs premium voice and provide your own ElevenLabs API key, Ashley's text responses are sent directly from your computer to ElevenLabs' API for speech synthesis. This is governed by <a href="https://elevenlabs.io/privacy-policy" target="_blank" rel="noopener">ElevenLabs' privacy policy</a>. Optional feature; off by default.
+      If you select xAI as your AI provider, the conversation context is sent directly from your computer to xAI's Grok API, using your own API key. xAI processes the message to generate Ashley's response. This data flow is governed by <a href="https://x.ai/legal/privacy-policy" target="_blank" rel="noopener">xAI's own privacy policy</a>. We are not a party to that relationship and do not receive any of that content.
+    </p>
+
+    <h3>OpenRouter — optional, cloud AI provider</h3>
+    <p>
+      If you select OpenRouter as your AI provider, your messages are sent directly from your computer to OpenRouter's API using your own API key. OpenRouter routes them to whichever underlying model you configured. This is governed by <a href="https://openrouter.ai/privacy" target="_blank" rel="noopener">OpenRouter's privacy policy</a>. We never see your messages.
+    </p>
+
+    <h3>Ollama — optional, 100% local AI provider</h3>
+    <p>
+      If you select Ollama as your AI provider, the model runs <strong>entirely on your computer</strong>. No data leaves your machine. No third-party network calls. Your messages, Ashley's responses, and all context stay on your PC.
+    </p>
+
+    <h3>ElevenLabs — optional, premium voice (off by default)</h3>
+    <p>
+      If you enable ElevenLabs and provide your own ElevenLabs API key, Ashley's text responses are sent directly from your computer to ElevenLabs' API for speech synthesis. Governed by <a href="https://elevenlabs.io/privacy-policy" target="_blank" rel="noopener">ElevenLabs' privacy policy</a>.
+    </p>
+
+    <h3>Local voice options — Kokoro, VoiceVox, Windows Web Speech</h3>
+    <p>
+      Ashley supports three additional voice engines that run entirely on your machine: Kokoro (local TTS), VoiceVox (local Japanese TTS), and Windows Web Speech (built into the OS). When you use any of these, no voice data leaves your PC.
     </p>
 
     <h3>Lemon Squeezy (payments)</h3>
@@ -137,12 +182,15 @@
 
     <h2>4. Local file access by the Ashley desktop app</h2>
     <p>
-      Ashley includes a system-control feature ("Actions" toggle) that can open applications, close browser tabs, control system volume, take screenshots, and type text on your behalf. Every such action is triggered by your explicit conversational instruction. Nothing is executed without an instruction from you. Screenshots, when taken, are sent to the xAI Grok API for analysis along with your message — they are not stored anywhere except in the temporary conversation context.
+      Ashley includes a system-control feature ("Actions" toggle) that can open applications, close browser tabs, control system volume, take screenshots, type text, set reminders, and search the web on your behalf. Every such action is triggered by your explicit conversational instruction. Nothing is executed without an instruction from you. Screenshots, when taken and shared with the AI for vision analysis, are sent to your selected AI provider (xAI / OpenRouter / Ollama) along with your message — they are not stored anywhere except in the temporary conversation context.
     </p>
 
-    <h2>5. Microphone and speech recognition</h2>
+    <h2>5. Microphone, speech recognition, and wake word</h2>
     <p>
-      When you click the microphone button, your voice is recorded locally and transcribed using Whisper (OpenAI), which runs entirely on your computer — no audio leaves your device. The resulting text is then sent to the Grok API as a normal message.
+      When you click the microphone button (or use the wake word), your voice is recorded locally and transcribed using Whisper (faster-whisper, runs offline on your computer) — <strong>no audio leaves your device</strong>. The resulting text is then sent to your selected AI provider as a normal message.
+    </p>
+    <p>
+      The wake word feature (saying "Ashley" to activate hands-free) uses <a href="https://github.com/dscripka/openWakeWord" target="_blank" rel="noopener">openWakeWord</a> running entirely on your PC. Audio is processed locally in real-time and discarded immediately. <strong>Nothing is streamed to any server.</strong> You can disable wake word detection at any time in Settings.
     </p>
 
     <h2>6. Your GDPR rights</h2>
@@ -150,7 +198,7 @@
       If you are in the EU, you have the right to access, correct, delete, export, or restrict the use of personal data we hold about you. Because Ashley is privacy-minimizing by design, the only data we hold about you on our side is your email address (from the Lemon Squeezy order) and any support correspondence you've had with us. To exercise any right, email <a href="mailto:ashleyia2c@gmail.com">ashleyia2c@gmail.com</a> and we will respond within 30 days.
     </p>
     <p>
-      For data held by third parties (xAI, Lemon Squeezy, ElevenLabs), please contact them directly using the links above.
+      For data held by third parties (xAI, OpenRouter, Lemon Squeezy, ElevenLabs), please contact them directly using the links above.
     </p>
 
     <h2>7. Data retention</h2>
@@ -160,7 +208,7 @@
 
     <h2>8. International transfers</h2>
     <p>
-      Data processed by xAI, Lemon Squeezy, ElevenLabs, and GitHub may be transferred to the United States. These providers contractually maintain EU-compatible safeguards (Standard Contractual Clauses or equivalent). By using Ashley and those services through your own credentials, you authorize this transfer.
+      Data processed by xAI, OpenRouter, Lemon Squeezy, ElevenLabs, and GitHub may be transferred to the United States. These providers contractually maintain EU-compatible safeguards (Standard Contractual Clauses or equivalent). By using Ashley and those services through your own credentials, you authorize this transfer. If you use Ollama and 100% local voice options, no data is transferred internationally — everything stays on your PC.
     </p>
 
     <h2>9. Children</h2>
