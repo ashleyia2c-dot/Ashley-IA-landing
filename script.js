@@ -239,16 +239,17 @@ const STORAGE_KEY = "ashley_landing_lang";
 const DEFAULT_LANG = "en";
 
 function detectInitialLang() {
-  // 1. Preferencia explícita del user (localStorage)
+  // 1. Preferencia explícita del user (localStorage) — única fuente de cambio
   const stored = localStorage.getItem(STORAGE_KEY);
   if (stored && SUPPORTED_LANGS.includes(stored)) return stored;
 
-  // 2. Idioma del navegador si coincide con alguno soportado
-  const browser = (navigator.language || navigator.userLanguage || "").toLowerCase();
-  for (const code of SUPPORTED_LANGS) {
-    if (browser.startsWith(code)) return code;
-  }
-
+  // 2. Default fijo a inglés.
+  // v0.16.14 — quitada la auto-detección por idioma del navegador. Antes,
+  // si el browser estaba en español/francés, la landing arrancaba en ese
+  // idioma. Eso confundía a usuarios bilingües que esperan que un producto
+  // anglosajón se presente primero en inglés. Ahora el comportamiento es
+  // explícito: arranca SIEMPRE en EN, y el user puede cambiar manualmente
+  // (su elección sí se persiste en localStorage para visitas futuras).
   return DEFAULT_LANG;
 }
 
