@@ -4,48 +4,91 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="meta_title">Ashley — AI Desktop Companion</title>
-  <meta name="description" data-i18n="meta_description" content="AI desktop companion for Windows with memory, voice, vision, 2D/3D pet mode, and optional PC control. One-time purchase, lifetime use.">
+  <meta name="description" data-i18n="meta_description" content="AI desktop companion for Windows with memory, voice, vision, 2D/3D pet mode, and optional PC control. One-time purchase, lifetime use, 3-day free trial.">
   <meta property="og:title" content="Ashley — AI Desktop Companion">
-  <meta property="og:description" content="Ashley lives on your Windows desktop: memory, voice, screen vision, 2D/3D pet mode, and optional PC control.">
+  <meta property="og:description" content="Ashley lives on your Windows desktop: memory, voice, screen vision, 2D/3D pet mode, and optional PC control. Try her free for 3 days.">
   <meta property="og:image" content="assets/ashley-portrait.jpg">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Language switcher -->
-  <div class="lang-switch">
-    <button data-lang="en" class="lang-btn" aria-label="English">EN</button>
-    <button data-lang="es" class="lang-btn" aria-label="Español">ES</button>
-    <button data-lang="fr" class="lang-btn" aria-label="Français">FR</button>
-    <button data-lang="ja" class="lang-btn" aria-label="日本語">日本語</button>
-    <button data-lang="de" class="lang-btn" aria-label="Deutsch">DE</button>
-    <button data-lang="ru" class="lang-btn" aria-label="Русский">RU</button>
-    <button data-lang="ko" class="lang-btn" aria-label="한국어">한국어</button>
-  </div>
+  <!-- ── SVG icon library (referenced with <use>) ─────────────────────── -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-pet" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><rect x="12.5" y="10.5" width="6.5" height="4.5" rx="1.2"/><line x1="8" y1="21" x2="16" y2="21"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.83z"/><line x1="7" y1="7" x2="7.01" y2="7"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+    <symbol id="i-toggle" viewBox="0 0 24 24"><rect x="1" y="5" width="22" height="14" rx="7"/><circle cx="16" cy="12" r="3"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  </svg>
 
-  <!-- Hero -->
-  <section class="hero">
+  <!-- ── Top bar ──────────────────────────────────────────────────────── -->
+  <header class="topbar">
+    <a href="#top" class="topbar-brand">Ashley</a>
+    <nav class="topbar-nav" aria-label="Sections">
+      <a href="#features" data-i18n="nav_features">Features</a>
+      <a href="#how" data-i18n="nav_how">How it works</a>
+      <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+    </nav>
+    <div class="topbar-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button data-lang="en" class="lang-btn" aria-label="English">EN</button>
+        <button data-lang="es" class="lang-btn" aria-label="Español">ES</button>
+        <button data-lang="fr" class="lang-btn" aria-label="Français">FR</button>
+        <button data-lang="ja" class="lang-btn" aria-label="日本語">JA</button>
+        <button data-lang="de" class="lang-btn" aria-label="Deutsch">DE</button>
+        <button data-lang="ru" class="lang-btn" aria-label="Русский">RU</button>
+        <button data-lang="ko" class="lang-btn" aria-label="한국어">KO</button>
+      </div>
+      <a href="https://ashley-ia.lemonsqueezy.com/checkout/buy/618b7e13-511b-435c-8e7f-d14cedadfd02" class="btn-primary btn-nav" target="_blank" rel="noopener" data-i18n="nav_buy">Buy — $14.99</a>
+    </div>
+  </header>
+
+  <!-- ── Hero ─────────────────────────────────────────────────────────── -->
+  <section class="hero" id="top">
     <div class="stars"></div>
     <div class="hero-content">
       <img src="assets/ashley-portrait.jpg" alt="Ashley portrait" class="hero-portrait">
       <h1 class="hero-title" data-i18n="hero_title">Meet Ashley</h1>
       <p class="hero-subtitle" data-i18n="hero_subtitle">Your AI companion for Windows, now with desktop pet mode.</p>
       <p class="hero-tagline" data-i18n="hero_tagline">She remembers you, talks by voice, reacts in 2D/3D, sees your screen when allowed, and can help control your PC.</p>
-      <a href="https://ashley-ia.lemonsqueezy.com/checkout/buy/618b7e13-511b-435c-8e7f-d14cedadfd02" class="btn-primary" target="_blank" rel="noopener">
-        <span data-i18n="hero_cta">Get Ashley — $14.99</span>
-      </a>
-      <p class="hero-footnote" data-i18n="hero_footnote">One-time purchase · Lifetime use · Free trial included</p>
+      <div class="cta-row">
+        <a href="https://ashley-ia.lemonsqueezy.com/checkout/buy/618b7e13-511b-435c-8e7f-d14cedadfd02" class="btn-primary" target="_blank" rel="noopener">
+          <span data-i18n="hero_cta">Get Ashley — $14.99</span>
+        </a>
+        <a href="https://github.com/ashleyia2c-dot/Ashley-Releases/releases/latest" class="btn-ghost" target="_blank" rel="noopener">
+          <svg class="btn-icon" aria-hidden="true"><use href="#i-download"/></svg>
+          <span data-i18n="hero_cta2">Try her free — 3 days</span>
+        </a>
+      </div>
+      <p class="hero-footnote" data-i18n="hero_footnote">One-time purchase · Lifetime use · 3-day free trial</p>
     </div>
   </section>
 
-  <!-- Video demo -->
-  <section class="section video-section">
+  <!-- ── Trust strip ──────────────────────────────────────────────────── -->
+  <section class="trust-strip" aria-label="Highlights">
+    <div class="trust-item"><svg aria-hidden="true"><use href="#i-download"/></svg><span data-i18n="strip1">3-day free trial — no card, no account</span></div>
+    <div class="trust-item"><svg aria-hidden="true"><use href="#i-tag"/></svg><span data-i18n="strip2">One-time $14.99 · no subscription</span></div>
+    <div class="trust-item"><svg aria-hidden="true"><use href="#i-shield"/></svg><span data-i18n="strip3">Your conversations stay on your PC</span></div>
+    <div class="trust-item"><svg aria-hidden="true"><use href="#i-cpu"/></svg><span data-i18n="strip4">Windows 10 &amp; 11 · 7 languages</span></div>
+  </section>
+
+  <!-- ── Video demo ───────────────────────────────────────────────────── -->
+  <section class="section video-section" id="demo">
     <h2 class="section-title" data-i18n="video_title">See her in action</h2>
     <p class="section-sub" data-i18n="video_sub">A quick look at what Ashley can do.</p>
     <div class="video-wrap">
@@ -60,66 +103,94 @@
     </div>
   </section>
 
-  <!-- Features -->
-  <section class="section features-section">
+  <!-- ── Features ─────────────────────────────────────────────────────── -->
+  <section class="section features-section" id="features">
     <h2 class="section-title" data-i18n="features_title">What she does</h2>
     <div class="features-grid">
       <div class="feature-card">
-        <div class="feature-icon">🐾</div>
+        <div class="feature-icon"><svg aria-hidden="true"><use href="#i-pet"/></svg></div>
         <h3 class="feature-title" data-i18n="feat1_title">Desktop pet mode</h3>
         <p class="feature-desc" data-i18n="feat1_desc">Minimize Ashley and she stays with you as a floating 2D or 3D companion. Chat from the pet window, use voice, and bring the full app back any time.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🎙️</div>
+        <div class="feature-icon"><svg aria-hidden="true"><use href="#i-mic"/></svg></div>
         <h3 class="feature-title" data-i18n="feat2_title">Voice and wake word</h3>
         <p class="feature-desc" data-i18n="feat2_desc">Say "Ashley" or tap the mic. Wake word detection and speech recognition run locally, and she can answer with Windows, Kokoro, VoiceVox, or premium TTS voices.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">💭</div>
+        <div class="feature-icon"><svg aria-hidden="true"><use href="#i-heart"/></svg></div>
         <h3 class="feature-title" data-i18n="feat3_title">Memory and relationship</h3>
         <p class="feature-desc" data-i18n="feat3_desc">She remembers facts, preferences, goals, reminders, and your shared history. Her mood and affection react to how you treat her.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">👁️</div>
+        <div class="feature-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></div>
         <h3 class="feature-title" data-i18n="feat4_title">She sees your screen</h3>
         <p class="feature-desc" data-i18n="feat4_desc">Enable vision and Ashley can understand screenshots, images, or your current screen. Vision is separate from PC control, so you decide exactly what she can access.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">⚡</div>
+        <div class="feature-icon"><svg aria-hidden="true"><use href="#i-zap"/></svg></div>
         <h3 class="feature-title" data-i18n="feat5_title">She acts on your PC</h3>
         <p class="feature-desc" data-i18n="feat5_desc">When Actions are enabled, Ashley can open apps, manage browser tabs, control volume, use hotkeys, type text, take screenshots, search, play media, and set reminders.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🔀</div>
+        <div class="feature-icon"><svg aria-hidden="true"><use href="#i-sliders"/></svg></div>
         <h3 class="feature-title" data-i18n="feat6_title">Choose your AI</h3>
         <p class="feature-desc" data-i18n="feat6_desc">Use xAI Grok, OpenRouter models, or local Ollama. Ashley explains what each model can do, including vision, web search, speed, and local-only tradeoffs.</p>
       </div>
     </div>
   </section>
 
-  <!-- Why Ashley -->
-  <section class="section why-section">
-    <h2 class="section-title" data-i18n="why_title">Why Ashley</h2>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">💎</div>
-        <h3 class="why-sub-title" data-i18n="why1_title">One-time purchase</h3>
-        <p class="why-desc" data-i18n="why1_desc">$14.99, lifetime use. No subscriptions, no renewals, no monthly bill from us. Ever.</p>
+  <!-- ── How it works ─────────────────────────────────────────────────── -->
+  <section class="section how-section" id="how">
+    <h2 class="section-title" data-i18n="how_title">How it works</h2>
+    <p class="section-sub" data-i18n="how_sub">From download to yours-forever, in three steps.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h3 class="step-title" data-i18n="step1_title">Download and meet her</h3>
+        <p class="step-desc" data-i18n="step1_desc">Grab the free trial and talk to Ashley for 3 full days. The complete app — memory, voice, pet mode — no card and no account needed.</p>
       </div>
-      <div class="why-card">
-        <div class="why-icon">☁️</div>
-        <h3 class="why-sub-title" data-i18n="why2_title">Cloud or 100% local</h3>
-        <p class="why-desc" data-i18n="why2_desc">Bring your own xAI or OpenRouter key, or run local Ollama for free. Cloud model costs depend on the model you choose.</p>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h3 class="step-title" data-i18n="step2_title">Plug in your AI</h3>
+        <p class="step-desc" data-i18n="step2_desc">Paste your own xAI or OpenRouter key (typically a few cents a day), or run her completely free and offline with local Ollama.</p>
       </div>
-      <div class="why-card">
-        <div class="why-icon">🔒</div>
-        <h3 class="why-sub-title" data-i18n="why3_title">Privacy by default</h3>
-        <p class="why-desc" data-i18n="why3_desc">Chat history, memories, diary, preferences — encrypted in your user folder. We don't have servers; we literally can't see your data.</p>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3 class="step-title" data-i18n="step3_title">Unlock her forever</h3>
+        <p class="step-desc" data-i18n="step3_desc">If she clicks with you, buy once for $14.99. Your license key arrives by email in minutes — Ashley, and everything she remembers, is yours for good.</p>
       </div>
     </div>
   </section>
 
-  <!-- Pricing -->
+  <!-- ── Why Ashley ───────────────────────────────────────────────────── -->
+  <section class="section why-section" id="why">
+    <h2 class="section-title" data-i18n="why_title">Why Ashley</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="feature-icon"><svg aria-hidden="true"><use href="#i-tag"/></svg></div>
+        <h3 class="why-sub-title" data-i18n="why1_title">One-time purchase</h3>
+        <p class="why-desc" data-i18n="why1_desc">$14.99, lifetime use. No subscriptions, no renewals, no monthly bill from us. Ever.</p>
+      </div>
+      <div class="why-card">
+        <div class="feature-icon"><svg aria-hidden="true"><use href="#i-cpu"/></svg></div>
+        <h3 class="why-sub-title" data-i18n="why2_title">Cloud or 100% local</h3>
+        <p class="why-desc" data-i18n="why2_desc">Bring your own xAI or OpenRouter key, or run local Ollama for free. Cloud model costs depend on the model you choose.</p>
+      </div>
+      <div class="why-card">
+        <div class="feature-icon"><svg aria-hidden="true"><use href="#i-shield"/></svg></div>
+        <h3 class="why-sub-title" data-i18n="why3_title">Privacy by default</h3>
+        <p class="why-desc" data-i18n="why3_desc">Your conversations, memories and diary live in files on your own PC — we have no servers and physically can't read them. Your AI key is stored encrypted with Windows DPAPI.</p>
+      </div>
+      <div class="why-card">
+        <div class="feature-icon"><svg aria-hidden="true"><use href="#i-toggle"/></svg></div>
+        <h3 class="why-sub-title" data-i18n="why4_title">You stay in control</h3>
+        <p class="why-desc" data-i18n="why4_desc">Screen vision and PC actions are separate opt-in toggles, off by default. Built-in safety guards check every system action before it runs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Pricing ──────────────────────────────────────────────────────── -->
   <section class="section pricing-section" id="pricing">
     <h2 class="section-title" data-i18n="pricing_title">Get Ashley</h2>
     <div class="price-card">
@@ -132,29 +203,38 @@
         </div>
       </div>
       <ul class="price-features">
-        <li data-i18n="price_feat1">✓ 2D/3D desktop pet mode with chat, voice, and wake word</li>
-        <li data-i18n="price_feat2">✓ Long-term memory, diary, reminders, goals, and important notes</li>
-        <li data-i18n="price_feat3">✓ Voice in (local Whisper) &amp; out (Windows / Kokoro / VoiceVox / ElevenLabs)</li>
-        <li data-i18n="price_feat4">✓ Screen and image vision when you allow it</li>
-        <li data-i18n="price_feat5">✓ Optional PC actions: apps, tabs, volume, hotkeys, typing, media, search</li>
-        <li data-i18n="price_feat6">✓ xAI Grok, OpenRouter, or Ollama local models</li>
-        <li data-i18n="price_feat7">✓ Affection, moods, 2D portraits, and 3D facial expressions</li>
-        <li data-i18n="price_feat8">✓ 7 UI languages: English, Spanish, French, Japanese, German, Russian, Korean</li>
+        <li data-i18n="price_feat1">2D/3D desktop pet mode with chat, voice, and wake word</li>
+        <li data-i18n="price_feat2">Long-term memory, diary, reminders, goals, and important notes</li>
+        <li data-i18n="price_feat3">Voice in (local Whisper) &amp; out (Windows / Kokoro / VoiceVox / ElevenLabs)</li>
+        <li data-i18n="price_feat4">Screen and image vision when you allow it</li>
+        <li data-i18n="price_feat5">Optional PC actions: apps, tabs, volume, hotkeys, typing, media, search</li>
+        <li data-i18n="price_feat6">xAI Grok, OpenRouter, or Ollama local models</li>
+        <li data-i18n="price_feat7">Affection, moods, 2D portraits, and 3D facial expressions</li>
+        <li data-i18n="price_feat8">7 UI languages: English, Spanish, French, Japanese, German, Russian, Korean</li>
       </ul>
       <a href="https://ashley-ia.lemonsqueezy.com/checkout/buy/618b7e13-511b-435c-8e7f-d14cedadfd02" class="btn-primary btn-full" target="_blank" rel="noopener">
         <span data-i18n="pricing_cta">Buy Ashley — $14.99</span>
       </a>
-      <p class="price-secure" data-i18n="pricing_secure">🔒 Secure checkout powered by Lemon Squeezy</p>
+      <a href="https://github.com/ashleyia2c-dot/Ashley-Releases/releases/latest" class="price-trial-link" target="_blank" rel="noopener" data-i18n="pricing_cta2">Not sure yet? Try her free for 3 days first</a>
+      <p class="price-secure"><svg class="secure-icon" aria-hidden="true"><use href="#i-lock"/></svg><span data-i18n="pricing_secure">Secure checkout via Lemon Squeezy · license key by email within minutes</span></p>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="section faq-section">
+  <!-- ── FAQ ──────────────────────────────────────────────────────────── -->
+  <section class="section faq-section" id="faq">
     <h2 class="section-title" data-i18n="faq_title">Frequently asked</h2>
     <div class="faq-list">
       <details class="faq-item">
         <summary data-i18n="faq1_q">What exactly is Ashley?</summary>
         <p data-i18n="faq1_a">A Windows desktop app with a character-driven AI companion inside. Ashley chats naturally, remembers you, reacts with moods and affection, can appear as a 2D/3D desktop pet, and can control your PC when you enable Actions.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq8_q">What do I need to run her?</summary>
+        <p data-i18n="faq8_a">A Windows 10 or 11 PC (64-bit) and about 1.5 GB of disk space. For the AI itself: your own xAI or OpenRouter API key (pay-per-use, typically a few cents a day), or local Ollama, which is completely free. Ashley walks you through this on first launch.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq9_q">How does the free trial work?</summary>
+        <p data-i18n="faq9_a">It's the full app — nothing locked, nothing removed — for 3 days or 300 messages, whichever comes first. No card, no account. When it ends, Ashley asks for a license key; your conversations and memories are kept, and unlocking brings them right back.</p>
       </details>
       <details class="faq-item">
         <summary data-i18n="faq2_q">Which AI model does she use?</summary>
@@ -173,17 +253,21 @@
         <p data-i18n="faq5_a">Yes. Your license allows activation on up to 3 devices (desktop + laptop + 1 spare for reinstalls). Deactivate a slot from one PC to free it for another any time.</p>
       </details>
       <details class="faq-item">
+        <summary data-i18n="faq10_q">Windows warns about an "unknown publisher" — is that normal?</summary>
+        <p data-i18n="faq10_a">Yes. Ashley is a new indie app and the installer isn't code-signed yet, so Windows SmartScreen may warn on first run. Click "More info", then "Run anyway". Every installer is published openly on our GitHub releases page, and code signing is on the roadmap.</p>
+      </details>
+      <details class="faq-item">
         <summary data-i18n="faq6_q">Refund policy?</summary>
-        <p data-i18n="faq6_a">Within 14 days of purchase and fewer than 40 messages sent — full refund, no questions asked. 40 messages is more than enough to know if Ashley clicks with you. Email us to request it.</p>
+        <p data-i18n="faq6_a">Ashley comes with a free 3-day trial of the complete app, so you can be sure she clicks with you before paying anything. Because a license key can't be returned once it has been delivered, all sales are final. If something doesn't work on your machine, email us — we answer personally and we'll sort it out with you.</p>
       </details>
       <details class="faq-item">
         <summary data-i18n="faq7_q">Is my data private?</summary>
-        <p data-i18n="faq7_a">Yes. Chat history, memories, diary and preferences live encrypted in your user folder — we don't have any servers and literally cannot see your data. If you use a cloud provider (xAI/OpenRouter), your messages go directly to them under their privacy policy. If you use Ollama, NOTHING leaves your PC — Ashley is fully offline.</p>
+        <p data-i18n="faq7_a">Yes. Chat history, memories, diary and preferences live in local files on your PC — we don't have any servers and literally cannot see your data. If you use a cloud provider (xAI/OpenRouter), your messages go directly to them under their privacy policy. If you use Ollama, NOTHING leaves your PC — Ashley is fully offline.</p>
       </details>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ── Footer ───────────────────────────────────────────────────────── -->
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-brand">
@@ -192,6 +276,7 @@
       </div>
       <div class="footer-links">
         <a href="mailto:ashleyia2c@gmail.com" data-i18n="footer_contact">Contact</a>
+        <a href="https://github.com/ashleyia2c-dot/Ashley-Releases/releases/latest" target="_blank" rel="noopener" data-i18n="footer_download">Download trial</a>
         <a href="privacy.html" data-i18n="footer_privacy">Privacy</a>
         <a href="terms.html" data-i18n="footer_terms">Terms</a>
         <a href="https://ashley-ia.lemonsqueezy.com/checkout/buy/618b7e13-511b-435c-8e7f-d14cedadfd02" target="_blank" rel="noopener" data-i18n="footer_buy">Buy</a>

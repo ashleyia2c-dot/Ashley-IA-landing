@@ -145,16 +145,24 @@
       var lang = "en";
       try {
         var stored = localStorage.getItem("ashley_landing_lang");
-        if (stored && ["en", "es", "fr"].indexOf(stored) !== -1) lang = stored;
+        if (stored && ["en", "es", "fr", "ja", "de", "ru", "ko"].indexOf(stored) !== -1) lang = stored;
       } catch (e) { /* localStorage may be blocked — default to en */ }
       if (lang === "en") return;  // no banner for English users — page is in EN
       var msg = {
         es: 'Esta página está actualmente disponible solo en inglés. La traducción completa llegará próximamente.',
         fr: 'Cette page est actuellement disponible uniquement en anglais. La traduction complète arrivera bientôt.',
+        ja: 'このページは現在英語のみです。完全な翻訳は近日提供予定です。',
+        de: 'Diese Seite ist derzeit nur auf Englisch verfügbar. Die vollständige Übersetzung folgt bald.',
+        ru: 'Эта страница пока доступна только на английском. Полный перевод появится скоро.',
+        ko: '이 페이지는 현재 영어로만 제공됩니다. 전체 번역이 곧 제공될 예정입니다.',
       }[lang];
       var back = {
         es: 'Volver al inicio',
         fr: "Retour à l'accueil",
+        ja: 'ホームに戻る',
+        de: 'Zurück zur Startseite',
+        ru: 'Вернуться на главную',
+        ko: '홈으로 돌아가기',
       }[lang];
       var c = document.getElementById("lang-notice-container");
       c.innerHTML = '<div class="lang-notice">' + msg +
@@ -165,7 +173,7 @@
 
   <section class="legal-page">
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: April 20, 2026</p>
+    <p class="updated">Last updated: June 9, 2026</p>
 
     <p>
       Ashley is a desktop AI companion built with privacy as a design principle. This page explains what data is collected, where it lives, who we share it with, and what your rights are under the EU General Data Protection Regulation (GDPR). It applies to the Ashley desktop application and the marketing website you're reading now.
@@ -186,6 +194,7 @@
       <li>Diary entries Ashley generates after sessions</li>
       <li>Your user preferences (language, voice settings, affection level, achievements, taste preferences)</li>
       <li>Your license key and activation instance, used for update verification</li>
+      <li>Free-trial state (start date and message count), stored in the same folder and mirrored in the Windows Registry under <code>HKCU\Software\Ashley</code>, so the trial period works reliably</li>
     </ul>
     <p>
       Your AI provider API key (xAI, OpenRouter, or none if you use Ollama) is stored encrypted using Windows DPAPI in <code>%APPDATA%\Ashley\key.bin</code>, tied to your Windows user account — it cannot be read from another account or another computer.
@@ -234,14 +243,22 @@
       Ashley's built-in auto-updater contacts GitHub's public Releases API to check for new versions. No authentication is sent. GitHub logs the request per their <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">privacy statement</a>.
     </p>
 
+    <h3>Free-trial time check</h3>
+    <p>
+      While a free trial is active, Ashley occasionally reads the current time from a major public HTTPS server (Cloudflare or Google) by looking only at the standard <code>Date</code> header of the response. No personal data, identifiers, or content are sent — it is a plain anonymous request, used solely to keep the trial clock honest. Licensed (purchased) copies never perform this check.
+    </p>
+
     <h3>Website analytics</h3>
     <p>
       This landing page does not use analytics, tracking pixels, or third-party scripts. No cookies are set. If that changes, this section will be updated.
     </p>
 
-    <h2>4. Local file access by the Ashley desktop app</h2>
+    <h2>4. Local file access, Actions, and screen vision</h2>
     <p>
-      Ashley includes a system-control feature ("Actions" toggle) that can open applications, close browser tabs, control system volume, take screenshots, type text, set reminders, and search the web on your behalf. Every such action is triggered by your explicit conversational instruction. Nothing is executed without an instruction from you. Screenshots, when taken and shared with the AI for vision analysis, are sent to your selected AI provider (xAI / OpenRouter / Ollama) along with your message — they are not stored anywhere except in the temporary conversation context.
+      Ashley includes a system-control feature ("Actions" toggle) that can open applications, close browser tabs, control system volume, take screenshots, type text, set reminders, and search the web on your behalf. Every such action is triggered by your explicit conversational instruction, and built-in guards sanitize action parameters before anything is executed. Nothing is executed without an instruction from you.
+    </p>
+    <p>
+      Separately, Ashley has an opt-in screen-vision toggle (the eye icon, off by default). While it is enabled, Ashley may periodically capture a low-resolution screenshot of your screen — and the pet window has its own opt-in observe toggle that works the same way — so she can comment on what you're doing. Any screenshot used for vision analysis is sent to your selected AI provider (xAI / OpenRouter / Ollama) together with your message, under that provider's privacy policy. Screenshots are not stored anywhere except in the temporary conversation context, and turning the toggle off stops all captures immediately.
     </p>
 
     <h2>5. Microphone, speech recognition, and wake word</h2>
@@ -270,9 +287,9 @@
       Data processed by xAI, OpenRouter, Lemon Squeezy, ElevenLabs, and GitHub may be transferred to the United States. These providers contractually maintain EU-compatible safeguards (Standard Contractual Clauses or equivalent). By using Ashley and those services through your own credentials, you authorize this transfer. If you use Ollama and 100% local voice options, no data is transferred internationally — everything stays on your PC.
     </p>
 
-    <h2>9. Children</h2>
+    <h2>9. Age requirement</h2>
     <p>
-      Ashley is not intended for users under 16. We do not knowingly collect data from anyone under 16.
+      Ashley is intended for adults. You must be at least 18 years old to use the application, and the app asks you to confirm this during onboarding. We do not knowingly collect data from anyone under 18.
     </p>
 
     <h2>10. Changes to this policy</h2>

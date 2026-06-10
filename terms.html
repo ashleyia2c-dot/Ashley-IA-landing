@@ -148,16 +148,24 @@
       var lang = "en";
       try {
         var stored = localStorage.getItem("ashley_landing_lang");
-        if (stored && ["en", "es", "fr"].indexOf(stored) !== -1) lang = stored;
+        if (stored && ["en", "es", "fr", "ja", "de", "ru", "ko"].indexOf(stored) !== -1) lang = stored;
       } catch (e) { /* localStorage may be blocked — default to en */ }
       if (lang === "en") return;
       var msg = {
         es: 'Esta página está actualmente disponible solo en inglés. La traducción completa llegará próximamente.',
         fr: 'Cette page est actuellement disponible uniquement en anglais. La traduction complète arrivera bientôt.',
+        ja: 'このページは現在英語のみです。完全な翻訳は近日提供予定です。',
+        de: 'Diese Seite ist derzeit nur auf Englisch verfügbar. Die vollständige Übersetzung folgt bald.',
+        ru: 'Эта страница пока доступна только на английском. Полный перевод появится скоро.',
+        ko: '이 페이지는 현재 영어로만 제공됩니다. 전체 번역이 곧 제공될 예정입니다.',
       }[lang];
       var back = {
         es: 'Volver al inicio',
         fr: "Retour à l'accueil",
+        ja: 'ホームに戻る',
+        de: 'Zurück zur Startseite',
+        ru: 'Вернуться на главную',
+        ko: '홈으로 돌아가기',
       }[lang];
       var c = document.getElementById("lang-notice-container");
       c.innerHTML = '<div class="lang-notice">' + msg +
@@ -168,10 +176,13 @@
 
   <section class="legal-page">
     <h1>Terms of Service</h1>
-    <p class="updated">Last updated: April 20, 2026</p>
+    <p class="updated">Last updated: June 9, 2026</p>
 
     <p>
-      These Terms govern your purchase and use of the Ashley desktop application ("the Software"). By installing or using Ashley you agree to these Terms. If you do not agree, do not install or use the Software, and request a refund per Section 5.
+      These Terms govern your purchase and use of the Ashley desktop application ("the Software"). By installing or using Ashley you agree to these Terms. If you do not agree, do not install or use the Software.
+    </p>
+    <p>
+      <strong>Eligibility:</strong> Ashley is intended for adults. You must be at least 18 years old to use the Software, and you confirm this during onboarding.
     </p>
 
     <h2>1. Who we are</h2>
@@ -185,6 +196,9 @@
     <h2>2. What you are buying</h2>
     <p>
       A perpetual, non-exclusive, non-transferable license to install and use the Ashley desktop application on up to three (3) devices you personally control. The license includes free updates for the lifetime of the product. There is no subscription; it is a one-time purchase.
+    </p>
+    <p>
+      <strong>Free trial.</strong> Before buying, anyone can use the built-in free trial: the complete application for 3 days or 300 messages, whichever comes first, with no payment details required. The trial exists precisely so you can evaluate Ashley on your own machine before purchasing. One trial per device; attempting to manipulate the trial state (system clock changes, deleting trial records) may end it early.
     </p>
     <p>
       The Software is a client that can connect to third-party AI services (xAI's Grok, OpenRouter, and optionally ElevenLabs for premium voice) using API keys that you provide. The Software also supports 100% local AI (Ollama) and local voice synthesis (Kokoro, VoiceVox, Windows Web Speech) — using these options means no third-party services are involved. We do not resell or provide any third-party services. When you use a cloud provider, you are responsible for your own usage costs with that provider under their respective terms.
@@ -221,19 +235,15 @@
       Ashley includes a personality with mood and affection mechanics. All interactions are between you and a fictional character implemented by a language model. Nothing Ashley says constitutes professional advice — medical, legal, financial, or otherwise.
     </p>
 
-    <h2>5. Refund policy</h2>
+    <h2>5. Refund policy — try before you buy</h2>
     <p>
-      We offer a refund under <strong>two cumulative conditions</strong>:
+      Ashley includes a <strong>free 3-day trial of the complete application</strong> (Section 2), so you can fully evaluate her on your own hardware before paying anything. Because of that, and because a license key is digital content that cannot be "returned" once it has been delivered and revealed, <strong>all sales are final</strong>.
     </p>
-    <ul>
-      <li>The request is made within 14 days of purchase, <em>and</em></li>
-      <li>You have sent fewer than 40 messages to Ashley from the device associated with the license key</li>
-    </ul>
     <p>
-      To request a refund, email <a href="mailto:ashleyia2c@gmail.com">ashleyia2c@gmail.com</a> with your order number. You may be asked to provide a screenshot of Settings → Usage showing your current message count. Refunds are processed through Lemon Squeezy and typically arrive within 5–10 business days.
+      This is not a wall: if Ashley does not work on your machine, or you believe your purchase went wrong (double charge, key never delivered, key rejected), email <a href="mailto:ashleyia2c@gmail.com">ashleyia2c@gmail.com</a> with your order number. We read every message personally and will make it right — including a refund where something on our side genuinely failed.
     </p>
     <div class="notice">
-      If you are a consumer in the European Union, Section 5 is in addition to, and does not override, the 14-day right of withdrawal granted by Directive 2011/83/EU, which applies until the service has been fully performed. Note that for digital content supplied immediately with your explicit consent, that right of withdrawal may lapse; please consult your local consumer protection authority for specifics.
+      If you are a consumer in the European Union: the license key is digital content supplied immediately after purchase. By completing checkout you expressly consent to immediate delivery and acknowledge that you thereby lose the 14-day right of withdrawal for digital content (Directive 2011/83/EU, art. 16(m)). This consent is captured by our merchant of record (Lemon Squeezy) during checkout. Statutory rights regarding defective digital content are not affected.
     </div>
 
     <h2>6. No warranty</h2>
