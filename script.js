@@ -53,6 +53,7 @@ const TRANSLATIONS = {
 
     how_title:         "How it works",
     how_sub:           "From download to yours-forever, in three steps.",
+    install_video_title: "Watch the full install walkthrough",
     step1_title:       "Download and meet her",
     step1_desc:        "Grab the free trial and talk to Ashley for 3 full days. The complete app — memory, voice, pet mode — no card and no account needed.",
     step2_title:       "Plug in your AI",
@@ -158,6 +159,7 @@ const TRANSLATIONS = {
 
     how_title:         "Cómo funciona",
     how_sub:           "De la descarga a tuya-para-siempre, en tres pasos.",
+    install_video_title: "Mira el tutorial de instalación completo",
     step1_title:       "Descárgala y conócela",
     step1_desc:        "Baja la prueba gratis y habla con Ashley durante 3 días completos. La app entera — memoria, voz, modo pet — sin tarjeta y sin cuenta.",
     step2_title:       "Conecta tu IA",
@@ -263,6 +265,7 @@ const TRANSLATIONS = {
 
     how_title:         "Comment ça marche",
     how_sub:           "Du téléchargement à à-toi-pour-toujours, en trois étapes.",
+    install_video_title: "Regarde le tutoriel d'installation complet",
     step1_title:       "Télécharge-la et rencontre-la",
     step1_desc:        "Prends l'essai gratuit et parle avec Ashley pendant 3 jours complets. L'app entière — mémoire, voix, mode pet — sans carte et sans compte.",
     step2_title:       "Branche ton IA",
@@ -375,6 +378,7 @@ const TRANSLATIONS = {
 
     how_title:         "使い方",
     how_sub:           "ダウンロードから永久利用まで、3ステップ。",
+    install_video_title: "インストール手順の動画を見る",
     step1_title:       "ダウンロードして会う",
     step1_desc:        "無料トライアルを入手して、3日間まるごとAshleyと話せます。フルアプリ — 記憶、音声、ペットモード — カードもアカウントも不要。",
     step2_title:       "AIをつなぐ",
@@ -480,6 +484,7 @@ const TRANSLATIONS = {
 
     how_title:         "So funktioniert's",
     how_sub:           "Vom Download bis für-immer-deins, in drei Schritten.",
+    install_video_title: "Die komplette Installationsanleitung ansehen",
     step1_title:       "Lade sie herunter und lerne sie kennen",
     step1_desc:        "Hol dir den Gratis-Test und sprich 3 volle Tage mit Ashley. Die komplette App — Gedächtnis, Stimme, Pet-Modus — ohne Karte und ohne Konto.",
     step2_title:       "Schließe deine KI an",
@@ -585,6 +590,7 @@ const TRANSLATIONS = {
 
     how_title:         "Как это работает",
     how_sub:           "От скачивания до навсегда-твоей — за три шага.",
+    install_video_title: "Смотри полное руководство по установке",
     step1_title:       "Скачай и познакомься",
     step1_desc:        "Возьми бесплатную пробную версию и общайся с Ashley целых 3 дня. Полное приложение — память, голос, pet-режим — без карты и без аккаунта.",
     step2_title:       "Подключи свой ИИ",
@@ -690,6 +696,7 @@ const TRANSLATIONS = {
 
     how_title:         "사용 방법",
     how_sub:           "다운로드부터 평생 소장까지, 세 단계.",
+    install_video_title: "전체 설치 가이드 영상 보기",
     step1_title:       "다운로드하고 만나봐",
     step1_desc:        "무료 체험을 받아서 3일 내내 Ashley와 대화해. 전체 앱 — 기억, 음성, 펫 모드 — 카드도 계정도 필요 없어.",
     step2_title:       "AI를 연결해",
