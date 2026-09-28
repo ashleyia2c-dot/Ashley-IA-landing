@@ -20,6 +20,8 @@
 
   <!-- ── SVG icon library (referenced with <use>) ─────────────────────── -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-pointer" viewBox="0 0 24 24"><path d="M4 3l7 17 2.5-6.5L20 11z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 20v-1.5a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4V20"/><circle cx="9" cy="7" r="3.2"/><path d="M22 20v-1.5a4 4 0 0 0-3-3.87"/><path d="M16.5 4.2a4 4 0 0 1 0 5.6"/></symbol>
     <symbol id="i-pet" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><rect x="12.5" y="10.5" width="6.5" height="4.5" rx="1.2"/><line x1="8" y1="21" x2="16" y2="21"/></symbol>
     <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
@@ -54,7 +56,7 @@
         <button data-lang="ru" class="lang-btn" aria-label="Русский">RU</button>
         <button data-lang="ko" class="lang-btn" aria-label="한국어">KO</button>
       </div>
-      <a href="https://ashley-ia.lemonsqueezy.com/checkout/buy/e8d4d5f5-6937-4c8c-b692-4803d8350a7b" class="btn-primary btn-nav" target="_blank" rel="noopener" data-i18n="nav_buy">Buy — $14.99</a>
+      <a href="https://ashley-ia.lemonsqueezy.com/checkout/buy/e8d4d5f5-6937-4c8c-b692-4803d8350a7b" class="btn-primary btn-nav" target="_blank" rel="noopener" data-i18n="nav_buy">Buy — €14.99</a>
     </div>
   </header>
 
@@ -68,7 +70,7 @@
       <p class="hero-tagline" data-i18n="hero_tagline">She remembers you, talks by voice, reacts in 2D/3D, sees your screen when allowed, and can help control your PC.</p>
       <div class="cta-row">
         <a href="https://ashley-ia.lemonsqueezy.com/checkout/buy/e8d4d5f5-6937-4c8c-b692-4803d8350a7b" class="btn-primary" target="_blank" rel="noopener">
-          <span data-i18n="hero_cta">Get Ashley — $14.99</span>
+          <span data-i18n="hero_cta">Get Ashley — €14.99</span>
         </a>
         <a href="https://github.com/ashleyia2c-dot/Ashley-Releases/releases/latest" class="btn-ghost" target="_blank" rel="noopener">
           <svg class="btn-icon" aria-hidden="true"><use href="#i-download"/></svg>
@@ -82,7 +84,7 @@
   <!-- ── Trust strip ──────────────────────────────────────────────────── -->
   <section class="trust-strip" aria-label="Highlights">
     <div class="trust-item"><svg aria-hidden="true"><use href="#i-download"/></svg><span data-i18n="strip1">3-day free trial — no card, no account</span></div>
-    <div class="trust-item"><svg aria-hidden="true"><use href="#i-tag"/></svg><span data-i18n="strip2">One-time $14.99 · no subscription</span></div>
+    <div class="trust-item"><svg aria-hidden="true"><use href="#i-tag"/></svg><span data-i18n="strip2">One-time €14.99 · no subscription</span></div>
     <div class="trust-item"><svg aria-hidden="true"><use href="#i-shield"/></svg><span data-i18n="strip3">Your conversations stay on your PC</span></div>
     <div class="trust-item"><svg aria-hidden="true"><use href="#i-cpu"/></svg><span data-i18n="strip4">Windows 10 &amp; 11 · 7 languages</span></div>
   </section>
@@ -92,8 +94,8 @@
     <h2 class="section-title" data-i18n="video_title">See her in action</h2>
     <p class="section-sub" data-i18n="video_sub">A quick look at what Ashley can do.</p>
     <div class="video-wrap">
-      <iframe src="https://www.youtube-nocookie.com/embed/zTZA3FNH6ns"
-              title="Ashley — presentation video"
+      <iframe src="https://www.youtube-nocookie.com/embed/rSqO_BvJbAM"
+              title="Ashley — official trailer"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen></iframe>
@@ -130,6 +132,16 @@
         <p class="feature-desc" data-i18n="feat5_desc">When Actions are enabled, Ashley can open apps, manage browser tabs, control volume, use hotkeys, type text, take screenshots, search, play media, and set reminders.</p>
       </div>
       <div class="feature-card">
+        <div class="feature-icon"><svg aria-hidden="true"><use href="#i-pointer"/></svg></div>
+        <h3 class="feature-title" data-i18n="feat7_title">She uses your PC herself</h3>
+        <p class="feature-desc" data-i18n="feat7_desc">Ask for something and Ashley looks at the screen, clicks, types and works step by step until it is done — she can even draw in Paint. A pink border shows when she is in control, and any key or mouse move stops her at once.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg aria-hidden="true"><use href="#i-users"/></svg></div>
+        <h3 class="feature-title" data-i18n="feat8_title">Companions you create</h3>
+        <p class="feature-desc" data-i18n="feat8_desc">Build your own companion — name, personality, story, 2D art or 3D VRM avatar, voice and AI model — or import a SillyTavern character card. Put several in a group chat and play the built-in games together.</p>
+      </div>
+      <div class="feature-card">
         <div class="feature-icon"><svg aria-hidden="true"><use href="#i-sliders"/></svg></div>
         <h3 class="feature-title" data-i18n="feat6_title">Choose your AI</h3>
         <p class="feature-desc" data-i18n="feat6_desc">Use xAI Grok, OpenRouter models, or local Ollama. Ashley explains what each model can do, including vision, web search, speed, and local-only tradeoffs.</p>
@@ -155,7 +167,7 @@
       <div class="step-card">
         <div class="step-num">03</div>
         <h3 class="step-title" data-i18n="step3_title">Unlock her forever</h3>
-        <p class="step-desc" data-i18n="step3_desc">If she clicks with you, buy once for $14.99. Your license key arrives by email in minutes — Ashley, and everything she remembers, is yours for good.</p>
+        <p class="step-desc" data-i18n="step3_desc">If she clicks with you, buy once for €14.99. Your license key arrives by email in minutes — Ashley, and everything she remembers, is yours for good.</p>
       </div>
     </div>
     <h3 class="install-video-title" data-i18n="install_video_title">Watch the full install walkthrough</h3>
@@ -175,7 +187,7 @@
       <div class="why-card">
         <div class="feature-icon"><svg aria-hidden="true"><use href="#i-tag"/></svg></div>
         <h3 class="why-sub-title" data-i18n="why1_title">One-time purchase</h3>
-        <p class="why-desc" data-i18n="why1_desc">$14.99, lifetime use. No subscriptions, no renewals, no monthly bill from us. Ever.</p>
+        <p class="why-desc" data-i18n="why1_desc">€14.99, lifetime use. No subscriptions, no renewals, no monthly bill from us. Ever.</p>
       </div>
       <div class="why-card">
         <div class="feature-icon"><svg aria-hidden="true"><use href="#i-cpu"/></svg></div>
@@ -203,7 +215,7 @@
         <img src="assets/ashley-soft.jpg" alt="" class="price-avatar">
         <div>
           <h3 class="price-name" data-i18n="pricing_product">Ashley — AI Desktop Companion</h3>
-          <p class="price-amount">$14.99</p>
+          <p class="price-amount" data-i18n="price_amount">€14.99</p>
           <p class="price-note" data-i18n="pricing_note">One-time · Lifetime · 3 PCs · Free trial</p>
         </div>
       </div>
@@ -213,12 +225,14 @@
         <li data-i18n="price_feat3">Voice in (local Whisper) &amp; out (Windows / Kokoro / VoiceVox / ElevenLabs)</li>
         <li data-i18n="price_feat4">Screen and image vision when you allow it</li>
         <li data-i18n="price_feat5">Optional PC actions: apps, tabs, volume, hotkeys, typing, media, search</li>
-        <li data-i18n="price_feat6">xAI Grok, OpenRouter, or Ollama local models</li>
+        <li data-i18n="price_feat6">xAI Grok, OpenRouter, or local models with Ollama, LM Studio and KoboldCPP</li>
+        <li data-i18n="price_feat9">PC control: she uses apps, websites and menus herself, step by step</li>
+        <li data-i18n="price_feat10">Create your own companions, import character cards, group chats and games</li>
         <li data-i18n="price_feat7">Affection, moods, 2D portraits, and 3D facial expressions</li>
         <li data-i18n="price_feat8">7 UI languages: English, Spanish, French, Japanese, German, Russian, Korean</li>
       </ul>
       <a href="https://ashley-ia.lemonsqueezy.com/checkout/buy/e8d4d5f5-6937-4c8c-b692-4803d8350a7b" class="btn-primary btn-full" target="_blank" rel="noopener">
-        <span data-i18n="pricing_cta">Buy Ashley — $14.99</span>
+        <span data-i18n="pricing_cta">Buy Ashley — €14.99</span>
       </a>
       <a href="https://github.com/ashleyia2c-dot/Ashley-Releases/releases/latest" class="price-trial-link" target="_blank" rel="noopener" data-i18n="pricing_cta2">Not sure yet? Try her free for 3 days first</a>
       <p class="price-secure"><svg class="secure-icon" aria-hidden="true"><use href="#i-lock"/></svg><span data-i18n="pricing_secure">Secure checkout via Lemon Squeezy · license key by email within minutes</span></p>
@@ -248,6 +262,10 @@
       <details class="faq-item">
         <summary data-i18n="faq3_q">Does she really wake up by voice?</summary>
         <p data-i18n="faq3_a">Yes. Wake word detection runs locally on your PC using openWakeWord — no cloud microphone stream. Say "Ashley" or click the mic in the main app or pet mode. You can disable it any time.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-i18n="faq11_q">Can she really use my computer?</summary>
+        <p data-i18n="faq11_a">Yes, when you turn PC control on. Ashley looks at the screen, then clicks and types step by step, checking her own work — opening apps, filling things in, writing a document, even drawing in Paint. You see a pink border while she works, any key or mouse move stops her instantly, and she stays away from terminals, system tools and password fields. It is off by default and works best with a capable AI model that can see images.</p>
       </details>
       <details class="faq-item">
         <summary data-i18n="faq4_q">Which operating systems are supported?</summary>
