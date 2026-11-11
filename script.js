@@ -91,7 +91,7 @@ const TRANSLATIONS = {
     price_feat10:      "Create your own companions, import character cards, group chats and games",
     pricing_cta:       "Buy Ashley — €14.99",
     pricing_cta2:      "Not sure yet? Try her free for 7 days first",
-    pricing_secure:    "Secure checkout via Lemon Squeezy · license key by email within minutes",
+    pricing_secure:    "Sold on itch.io · your license key comes with your purchase",
 
     faq_title:         "Frequently asked",
     faq1_q:            "What exactly is Ashley?",
@@ -206,7 +206,7 @@ const TRANSLATIONS = {
     price_feat10:      "Crea tus propios compañeros, importa character cards, chats de grupo y juegos",
     pricing_cta:       "Comprar Ashley — 14,99 €",
     pricing_cta2:      "¿Aún no lo ves claro? Pruébala gratis 7 días primero",
-    pricing_secure:    "Pago seguro con Lemon Squeezy · key de licencia por email en minutos",
+    pricing_secure:    "Se vende en itch.io · la key de licencia viene con tu compra",
 
     faq_title:         "Preguntas frecuentes",
     faq1_q:            "¿Qué es Ashley exactamente?",
@@ -321,7 +321,7 @@ const TRANSLATIONS = {
     price_feat10:      "Crée tes propres compagnons, importe des character cards, chats de groupe et jeux",
     pricing_cta:       "Acheter Ashley — 14,99 €",
     pricing_cta2:      "Pas encore sûr ? Essaie-la gratuitement 7 jours d'abord",
-    pricing_secure:    "Paiement sécurisé via Lemon Squeezy · clé de licence par email en quelques minutes",
+    pricing_secure:    "Vendu sur itch.io · ta clé de licence est fournie avec l'achat",
 
     faq_title:         "Questions fréquentes",
     faq1_q:            "Qu'est-ce qu'Ashley exactement ?",
@@ -443,7 +443,7 @@ const TRANSLATIONS = {
     price_feat10:      "自分のコンパニオン作成、キャラクターカード読み込み、グループチャットとゲーム",
     pricing_cta:       "Ashleyを買う — €14.99",
     pricing_cta2:      "まだ迷っていますか？まず7日間無料で試す",
-    pricing_secure:    "Lemon Squeezyによるセキュア決済 · ライセンスキーは数分でメール到着",
+    pricing_secure:    "itch.ioで販売中 · ライセンスキーは購入時に届きます",
 
     faq_title:         "よくある質問",
     faq1_q:            "Ashleyとは正確には何ですか?",
@@ -558,7 +558,7 @@ const TRANSLATIONS = {
     price_feat10:      "Eigene Begleiter erstellen, Character Cards importieren, Gruppenchats und Spiele",
     pricing_cta:       "Ashley kaufen — 14,99 €",
     pricing_cta2:      "Noch unsicher? Teste sie zuerst 7 Tage gratis",
-    pricing_secure:    "Sichere Bezahlung über Lemon Squeezy · Lizenzschlüssel in Minuten per E-Mail",
+    pricing_secure:    "Erhältlich auf itch.io · der Lizenzschlüssel kommt mit dem Kauf",
 
     faq_title:         "Häufig gefragt",
     faq1_q:            "Was genau ist Ashley?",
@@ -673,7 +673,7 @@ const TRANSLATIONS = {
     price_feat10:      "Свои компаньоны, импорт character cards, групповые чаты и игры",
     pricing_cta:       "Купить Ashley — 14,99 €",
     pricing_cta2:      "Ещё сомневаешься? Сначала попробуй бесплатно 7 дней",
-    pricing_secure:    "Безопасная оплата через Lemon Squeezy · лицензионный ключ на почту за минуты",
+    pricing_secure:    "Продаётся на itch.io · лицензионный ключ приходит вместе с покупкой",
 
     faq_title:         "Часто задаваемые вопросы",
     faq1_q:            "Что такое Ashley?",
@@ -788,7 +788,7 @@ const TRANSLATIONS = {
     price_feat10:      "나만의 컴패니언 제작, 캐릭터 카드 가져오기, 그룹 채팅과 게임",
     pricing_cta:       "Ashley 사기 — €14.99",
     pricing_cta2:      "아직 고민돼? 먼저 7일 무료로 써봐",
-    pricing_secure:    "Lemon Squeezy 안전 결제 · 라이선스 키는 몇 분 안에 메일로",
+    pricing_secure:    "itch.io에서 판매 · 라이선스 키는 구매와 함께 받아요",
 
     faq_title:         "자주 묻는 질문",
     faq1_q:            "Ashley는 정확히 무엇이야?",
